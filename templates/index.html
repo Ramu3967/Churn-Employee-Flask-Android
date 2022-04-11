@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Churn Prediction</title>
+</head>
+<body>
+
+<form action="{{ url_for('predict') }}" method="post">
+    <label for="CreditScore">Credit Score : </label>
+    <input type="number" id="CreditScore" required="required" name="CreditScore" placeholder="CreditScore" step="0.000001"><br>
+
+    <p>Please select the Gender:</p>
+    <input type="radio" name="gender" value="1" required="required"> Male
+    <input type="radio" name="gender" value="0" required="required"> Female <br><br>
+
+    <label for="Age">Age : </label>
+    <input type="number" name="Age" id="Age" placeholder="Age" required="required" step="0.000001"><br>
+
+    <label for="Tenure">Tenure : </label>
+    <input type="number" name="Tenure" id="Tenure" placeholder="Enter tenure" required="required" step="0.000001"><br>
+
+    <label for="Balance">Balance : </label>
+    <input type="number" name="Balance" id="Balance" placeholder="Balance" required="required " step="0.000001"><br>
+
+    <label for="NumProd">Number of products : </label>
+    <input type="number" name="NumProd" id="NumProd" placeholder="Number Of Products" required="required" step="0.000001"><br><br>
+
+    <label for="HasCC">Has Credit Card? </label>
+    <select name="HasCC" id="HasCC" required="required">
+        <option value="">Select</option>
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+    </select><br>
+
+    <p>Please enter whether the user is an active member or not:</p>
+    <input type="radio" name="ActiveMember" value="1" required="required"> Yes
+    <input type="radio" name="ActiveMember" value="0" required="required"> No <br>
+
+    <label for="EstimatedSalary">Estimated Salary : </label>
+    <input type="number" id="EstimatedSalary" name="EstimatedSalary" placeholder="Estimated Salary" required="required" step="0.000001"><br><br>
+
+    <label for="geo">Country:</label>
+    <select name="Geography" id="geo" required="required">
+        <option value="">Select</option>
+        <option value="fr">France</option>
+        <option value="ge">Germany</option>
+        <option value="sp">Spain</option>
+    </select><br><br>
+    <input type="submit" name="Predict Exit">
+</form>
+<br><br>
+{{ the_result }}
+
+</body>
+</html>
